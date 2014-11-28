@@ -1,9 +1,0 @@
-com\spiderserver\utils\WorkflowResolver.class
-com\spiderserver\utils\MysqlConnector.class
-com\spiderserver\po\Content.class
-com\spiderserver\parser\impl\StrParser.class
-com\spiderserver\parser\impl\RegexParser.class
-com\spiderserver\po\Schema.class
-com\spiderserver\parser\Parser.class
-com\spiderserver\parser\impl\XpathParser.class
-com\spiderserver\HelloController.class
