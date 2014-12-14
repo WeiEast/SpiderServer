@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spiderserver.dao.SchemaInfoMapper">
+    <select id="getAllSchema" resultType="java.util.List">
+        SELECT * FROM schemainfo
+    </select>
+    <insert id="addSchema" parameterType="com.spiderserver.po.SchemaInfo" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO schemainfo (schemaname,strategy) VALUES (#{schemaname},#{strategy})
+    </insert>
+    <update id="updateSchema" parameterType="com.spiderserver.po.SchemaInfo">
+        UPDATE schemainfo SET schemaname=#{schemaname},strategy=#{strategy} WHERE id=#{id}
+    </update>
+    <delete id="deleteSchema" parameterType="int">
+        DELETE FROM schemainfo WHERE id=#{id}
+    </delete>
+</mapper>

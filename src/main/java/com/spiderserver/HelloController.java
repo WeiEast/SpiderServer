@@ -14,6 +14,6 @@ public class HelloController {
 	public String printWelcome(ModelMap model) {
 		model.addAttribute("message", "Hello world!");
         logger.info("test log4j");
-		return "hello";
+		return "/hello.jsp";
 	}
 }
