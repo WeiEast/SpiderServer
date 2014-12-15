@@ -3,6 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
+<script type="text/javascript">
+    function submit(id) {
+        $.post("deleteSchema.do", { Action: "post", deleteId: id },function (data, textStatus){window.location.reload(true);});
+    }
+
+</script>
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
@@ -39,7 +45,10 @@
                         <td><c:out value="${item.schemaName}"></c:out></td>
                         <td><c:if test="${item.stat=='0'}">Waiting</c:if><c:if test="${item.stat=='1'}">Running</c:if></td>
                         <td><c:out value="${item.cycle}"></c:out>小时</td>
-                        <td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"/></td>
+                        <td>
+                            <input type="image" src="images/icn_edit.png" title="Edit">
+                            <input type="image" src="images/icn_trash.png" title="Trash" onclick="submit(${item.id})"/>
+                        </td>
                     </tr>
                 </c:forEach>
 			</tbody> 

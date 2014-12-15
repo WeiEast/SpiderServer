@@ -49,7 +49,7 @@ public class AddSchedularController implements Controller{
         SchemaInfo si = new SchemaInfo(name,schedular,storage,cycle,0);
         schemaInfoMapper.addSchema(si);
         ModelMap map = new ModelMap();
-        return new ModelAndView("/show");
+        return new ModelAndView("redirect:/showAllSchema.do");
     }
     private int minLength(String[] a, String[] b, String[] c,String[] d,String[] e){
         return Math.min(a.length,Math.min(b.length,Math.min(c.length,Math.min(d.length,e.length))));

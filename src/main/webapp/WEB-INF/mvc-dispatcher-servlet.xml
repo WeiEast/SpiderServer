@@ -11,6 +11,7 @@
         <property name="mappings">
             <props>
                 <prop key="showAllSchema.do">ShowSchemaController</prop>
+                <prop key="deleteSchema.do">DeleteSchemaController</prop>
                 <prop key="addSchedular.do">AddSchedularController</prop>
                 <prop key="edit.do">ShowEditController</prop>
             </props>
@@ -18,6 +19,7 @@
 
     </bean>
     <bean id="ShowEditController" class="com.spiderserver.controller.ShowEditController"></bean>
+    <bean id="DeleteSchemaController" class="com.spiderserver.controller.DeleteSchemaController"></bean>
     <bean id="ShowSchemaController" class="com.spiderserver.controller.ShowSchemaController"></bean>
     <bean id="AddSchedularController" class="com.spiderserver.controller.AddSchedularController"></bean>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
