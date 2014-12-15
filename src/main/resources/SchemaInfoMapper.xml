@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spiderserver.dao.SchemaInfoMapper">
-    <select id="getAllSchema" resultType="java.util.List">
+    <select id="getAllSchema" resultType="com.spiderserver.po.SchemaInfo">
         SELECT * FROM schemainfo
     </select>
     <insert id="addSchema" parameterType="com.spiderserver.po.SchemaInfo" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO schemainfo (schemaname,strategy) VALUES (#{schemaname},#{strategy})
+        INSERT INTO schemainfo (schemaname,strategy,stor,stat,cycle) VALUES (#{schemaname},#{strategy},#{stor},#{stat},#{cycle})
     </insert>
     <update id="updateSchema" parameterType="com.spiderserver.po.SchemaInfo">
         UPDATE schemainfo SET schemaname=#{schemaname},strategy=#{strategy} WHERE id=#{id}

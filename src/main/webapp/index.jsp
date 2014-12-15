@@ -62,7 +62,7 @@
 				document.getElementById("current").innerHTML="全部调度";
 				break;
 		};
-		document.getElementById("show_frame").src=n+".jsp";
+		document.getElementById("show_frame").src=n+".do";
 	}	
 </script>
 </head>
@@ -72,7 +72,7 @@
 
 	<header id="header">
 		<hgroup>
-			<h1 class="site_title"><a href="index.jsp">欢迎使用公文处理系统</a></h1>
+			<h1 class="site_title"><a href="index.jsp">欢迎使用爬虫系统</a></h1>
 			<h2 class="section_title"></h2><div class="btn_view_site"></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
@@ -100,20 +100,19 @@
 		<hr/>
 		<h3>调度管理</h3>
 		<ul class="toggle">
-			<li class="icn_new_article"><a href="#" onclick='refresh("show")'>调度管理</a></li>
+			<li class="icn_new_article"><a href="#" onclick='refresh("showAllSchema")'>调度管理</a></li>
 			<li class="icn_edit_article"><a href="#" onclick='refresh("edit")'>新增调度</a></li>
 			<!--<li class="icn_categories"><a href="#" onclick="refresh()">待办公文</a></li>
 			<li class="icn_tags"><a href="#" onclick="refresh()">统计信息</a></li>-->
 		</ul>		
 		<footer>
 			<hr />
-			<p><strong>业务部门：行政部 </strong></p>
-			<p>技术热线：010-62280000</p>
+			<p><strong>邮箱：joyofeveryday@163.com</strong></p>
 		</footer>
 	</aside><!-- end of sidebar -->
 	
 	<section id="main" class="column">
-		<iframe id="show_frame" name="test" src="show.jsp" frameborder=0 scrolling=no width="100%" height="100%">
+		<iframe id="show_frame" name="test" src="showAllSchema.do" frameborder=0 scrolling=no width="100%" height="100%">
 			
 		</iframe>
 	</section>

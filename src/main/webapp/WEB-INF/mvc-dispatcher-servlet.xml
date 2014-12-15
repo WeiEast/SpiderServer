@@ -12,10 +12,12 @@
             <props>
                 <prop key="showAllSchema.do">ShowSchemaController</prop>
                 <prop key="addSchedular.do">AddSchedularController</prop>
+                <prop key="edit.do">ShowEditController</prop>
             </props>
         </property>
 
     </bean>
+    <bean id="ShowEditController" class="com.spiderserver.controller.ShowEditController"></bean>
     <bean id="ShowSchemaController" class="com.spiderserver.controller.ShowSchemaController"></bean>
     <bean id="AddSchedularController" class="com.spiderserver.controller.AddSchedularController"></bean>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

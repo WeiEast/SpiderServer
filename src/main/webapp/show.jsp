@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -23,42 +25,23 @@
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 			<table class="tablesorter" cellspacing="0"> 
-			<tbody> 
-				<tr> 
-   					<td><input type="checkbox"></td> 
-    				<td>Lorem Ipsum Dolor Sit Amet</td> 
-    				<td>Articles</td> 
-    				<td>5th April 2011</td> 
-    				<td><input type="image" src="../images/icn_edit.png" title="Edit"><input type="image" src="../images/icn_trash.png" title="Trash"></td>
-				</tr> 
-				<tr> 
-   					<td><input type="checkbox"></td> 
-    				<td>Ipsum Lorem Dolor Sit Amet</td> 
-    				<td>Freebies</td> 
-    				<td>6th April 2011</td> 
-   				 	<td><input type="image" src="../images/icn_edit.png" title="Edit"><input type="image" src="../images/icn_trash.png" title="Trash"></td>
-				</tr>
-				<tr> 
-   					<td><input type="checkbox"></td> 
-    				<td>Sit Amet Dolor Ipsum</td> 
-    				<td>Tutorials</td> 
-    				<td>10th April 2011</td> 
-    				<td><input type="image" src="../images/icn_edit.png" title="Edit"><input type="image" src="../images/icn_trash.png" title="Trash"></td>
-				</tr> 
-				<tr> 
-   					<td><input type="checkbox"></td> 
-    				<td>Dolor Lorem Amet</td> 
-    				<td>Articles</td> 
-    				<td>16th April 2011</td> 
-   				 	<td><input type="image" src="../images/icn_edit.png" title="Edit"><input type="image" src="../images/icn_trash.png" title="Trash"></td>
-				</tr>
-				<tr> 
-   					<td><input type="checkbox"></td> 
-    				<td>Dolor Lorem Amet</td> 
-    				<td>Articles</td> 
-    				<td>16th April 2011</td> 
-   				 	<td><input type="image" src="../images/icn_edit.png" title="Edit"><input type="image" src="../images/icn_trash.png" title="Trash"></td>
-				</tr>  
+			<tbody>
+                <tr>
+                    <td></td>
+                    <td>调度名称</td>
+                    <td>调度状态</td>
+                    <td>调度周期</td>
+                    <td></td>
+                </tr>
+                <c:forEach items="${articles}" var="item">
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><c:out value="${item.schemaName}"></c:out></td>
+                        <td><c:if test="${item.stat=='0'}">Waiting</c:if><c:if test="${item.stat=='1'}">Running</c:if></td>
+                        <td><c:out value="${item.cycle}"></c:out>小时</td>
+                        <td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"/></td>
+                    </tr>
+                </c:forEach>
 			</tbody> 
 			</table>
 			</div><!-- end of #tab1 -->

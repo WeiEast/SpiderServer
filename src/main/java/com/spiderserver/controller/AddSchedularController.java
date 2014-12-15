@@ -21,18 +21,32 @@ public class AddSchedularController implements Controller{
     private SchemaInfoMapper schemaInfoMapper;
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        //name
         String name = request.getParameter("name");
-        String id[] = request.getParameterValues("id");
-        String source[] = request.getParameterValues("source");
-        String type[] = request.getParameterValues("type");
-        String mode[] = request.getParameterValues("mode");
-        String template[] = request.getParameterValues("template");
+        //cycle
+        long cycle = Long.parseLong(request.getParameter("day"))*24+Long.parseLong(request.getParameter("hour"));
+        //schedular
+        String schedularId[] = request.getParameterValues("schedularId");
+        String fetchsource[] = request.getParameterValues("fetchsource");
+        String fetchtype[] = request.getParameterValues("fetchtype");
+        String fetchmode[] = request.getParameterValues("fetchmode");
+        String fetchtemplate[] = request.getParameterValues("fetchtemplate");
+        //storage
+        String storageId[] = request.getParameterValues("storageId");
+        String storagesource[] = request.getParameterValues("storagesource");
+        String storagetype[] = request.getParameterValues("storagetype");
+        String storagemode[] = request.getParameterValues("storagemode");
+        String storagetemplate[] = request.getParameterValues("storagetemplate");
+
         String schedular = "";
         String storage = "";
-        for(int i=0;i<minLength(id,source,type,mode,template);i++){
-            schedular += ""+id[i]+":"+mode[i]+":"+source[i]+":"+type[i]+":"+template[i]+"\n";
+        for(int i=0;i<minLength(schedularId,fetchsource,fetchtype,fetchmode,fetchtemplate);i++){
+            schedular += ""+schedularId[i]+":"+fetchmode[i]+":"+fetchsource[i]+":"+fetchtype[i]+":"+fetchtemplate[i]+";";
         }
-        SchemaInfo si = new SchemaInfo(name,schedular);
+        for(int i=0;i<minLength(storageId,storagesource,storagetype,storagemode,storagetemplate);i++){
+            storage += ""+storageId[i]+":"+storagemode[i]+":"+storagesource[i]+":"+storagetype[i]+":"+storagetemplate[i]+";";
+        }
+        SchemaInfo si = new SchemaInfo(name,schedular,storage,cycle,0);
         schemaInfoMapper.addSchema(si);
         ModelMap map = new ModelMap();
         return new ModelAndView("/show");
