@@ -2,9 +2,12 @@ package com.spiderserver.utils;
 
 import com.spiderserver.po.Schema;
 import com.spiderserver.po.SchemaInfo;
+import com.spiderserver.po.Storage;
 import org.apache.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -13,7 +16,7 @@ import java.util.Map;
 public class WorkflowResolver {
     private static Logger logger = Logger.getLogger(WorkflowResolver.class);
 
-    public Schema constructSchema(SchemaInfo si) {
+    public static Schema constructSchema(SchemaInfo si) {
         if(si==null){
             System.out.println("null");
         }
@@ -37,5 +40,18 @@ public class WorkflowResolver {
             }
         }
         return map.get(1);
+    }
+
+    public static Map<Integer, List<Storage>> constructStorage(SchemaInfo si){
+        Map<Integer,List<Storage>> map = new HashMap<Integer, List<Storage>>();
+        for(String stor:si.getStor().split(";")){
+            String t[] = stor.split(":");
+            Storage storage = new Storage(Integer.parseInt(t[0]),t[1],t[2],Integer.parseInt(t[3]),t[4],t[5]);
+            if(!map.containsKey(storage.getInput())){
+                map.put(storage.getInput(), new ArrayList<Storage>());
+            }
+            map.get(storage.getInput()).add(storage);
+        }
+        return map;
     }
 }

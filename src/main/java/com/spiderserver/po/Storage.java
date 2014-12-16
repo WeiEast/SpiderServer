@@ -5,11 +5,24 @@ package com.spiderserver.po;
  */
 public class Storage {
     private int id;
-    private String name;
-    private String type;
-    private int input;
-    private String mode;
-    private String source;
+    private String name;//名称
+    private String type;//值类型
+    private int input;//输入源
+    private String mode;//解析方式：str；regex；xpath
+    private String source;//解析路径
+
+    public Storage() {
+    }
+
+    public Storage(int id, String name, String type, int input, String mode, String source) {
+
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.input = input;
+        this.mode = mode;
+        this.source = source;
+    }
 
     public int getId() {
         return id;
@@ -18,6 +31,7 @@ public class Storage {
     public void setId(int id) {
         this.id = id;
     }
+
 
     public String getName() {
         return name;

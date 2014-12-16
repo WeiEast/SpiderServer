@@ -7,7 +7,7 @@ import com.spiderserver.parser.Parser;
  */
 public class XpathParser implements Parser {
     @Override
-    public String parser(Object source) {
+    public Object parser(Object source, String path) {
         return null;
     }
 }
