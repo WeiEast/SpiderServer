@@ -85,7 +85,7 @@
                     <input type="button" value="新增" onClick="add_storage()">
                 </div>
                 <div class="module_div">
-                    <label class="info_content">id</label>
+                    <label class="info_content">字段名称</label>
                     <label class="info_content">字段类型</label>
                     <label class="info_content">输入源序号</label>
                     <label class="info_content">解析方式</label>
