@@ -37,18 +37,18 @@ public class AddSchedularController implements Controller{
         String storagetype[] = request.getParameterValues("storagetype");
         String storagemode[] = request.getParameterValues("storagemode");
         String storagetemplate[] = request.getParameterValues("storagetemplate");
+        String storagename[] = request.getParameterValues("storagename");
 
         String schedular = "";
         String storage = "";
         for(int i=0;i<minLength(schedularId,fetchsource,fetchtype,fetchmode,fetchtemplate);i++){
             schedular += ""+schedularId[i]+":"+fetchmode[i]+":"+fetchsource[i]+":"+fetchtype[i]+":"+fetchtemplate[i]+";";
         }
-        for(int i=0;i<minLength(storageId,storagesource,storagetype,storagemode,storagetemplate);i++){
-            storage += ""+storageId[i]+":"+storagemode[i]+":"+storagesource[i]+":"+storagetype[i]+":"+storagetemplate[i]+";";
+        for(int i=0;i<minLength(storagename,storagesource,storagetype,storagemode,storagetemplate);i++){
+            storage += ""+storageId[i]+":"+storagename[i]+":"+storagemode[i]+":"+storagesource[i]+":"+storagetype[i]+":"+storagetemplate[i]+";";
         }
         SchemaInfo si = new SchemaInfo(name,schedular,storage,cycle,0);
         schemaInfoMapper.addSchema(si);
-        ModelMap map = new ModelMap();
         return new ModelAndView("redirect:/showAllSchema.do");
     }
     private int minLength(String[] a, String[] b, String[] c,String[] d,String[] e){
