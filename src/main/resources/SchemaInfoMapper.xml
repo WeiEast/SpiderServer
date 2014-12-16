@@ -5,6 +5,9 @@
     <select id="getAllSchema" resultType="com.spiderserver.po.SchemaInfo">
         SELECT * FROM schemainfo
     </select>
+    <select id="getSchemaInfoById" resultType="com.spiderserver.po.SchemaInfo">
+        SELECT * FROM schemainfo where id=#{id}
+    </select>
     <insert id="addSchema" parameterType="com.spiderserver.po.SchemaInfo" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO schemainfo (schemaname,strategy,stor,stat,cycle) VALUES (#{schemaname},#{strategy},#{stor},#{stat},#{cycle})
     </insert>
