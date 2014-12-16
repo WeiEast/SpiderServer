@@ -21,7 +21,7 @@
             source += "<label class=\"info_content\">"+schedule_count+"</label>";
             source += "<input name=\"schedularId\" type=\"hidden\" value=\""+schedule_count+"\">";
             source += "<div class=\"info_content\">";
-            source += "<select name=\"fetchmode\"><option>抓取</option><option>取值</option></select></div>";
+            source += "<select name=\"fetchmode\"><option value=\"1\">抓取</option><option value=\"2\">取值</option></select></div>";
             source += "<div class=\"info_content\"><input name=\"fetchsource\" type=\"text\" size=\"20\" maxlength=\"150\"/></div>";
             source += "<div class=\"info_content\">";
             source += "<select name=\"fetchtype\" class=\"info_content\"><option>str</option><option>xpath</option><option>regex</option></select></div>";
@@ -32,7 +32,7 @@
             <!--当前不支持regex按组划分，后期希望在调度和存储中都加入regex的分组取值功能-->
             storage_count += 1;
             var source = "<div class=\"module_div\">";
-            source += "<label class=\"info_content\">"+storage_count+"</label>";
+            source += "<div class=\"info_content\"><input name=\"storagename\" type=\"text\" size=\"20\" maxlength=\"150\"/></div>";
             source += "<input name=\"storageId\" type=\"hidden\" value=\""+schedule_count+"\">";
             source += "<div class=\"info_content\">";
             source += "<select name=\"storagemode\"><option>int</option><option>str</option><option>double</option></select></div>";

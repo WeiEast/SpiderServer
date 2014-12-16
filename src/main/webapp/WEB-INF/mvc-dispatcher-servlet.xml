@@ -22,6 +22,7 @@
     <bean id="DeleteSchemaController" class="com.spiderserver.controller.DeleteSchemaController"></bean>
     <bean id="ShowSchemaController" class="com.spiderserver.controller.ShowSchemaController"></bean>
     <bean id="AddSchedularController" class="com.spiderserver.controller.AddSchedularController"></bean>
+    <bean id="DataConversionTask" class="com.spiderserver.quartz.DataConversionTask"></bean>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/"/>
         <property name="suffix" value=".jsp"/>

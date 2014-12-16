@@ -9,6 +9,7 @@ import java.util.List;
  */
 public interface SchemaInfoMapper {
     public List<SchemaInfo> getAllSchema();
+    public SchemaInfo getSchemaInfoById(int id);
     public void addSchema(SchemaInfo schemaInfo);
     public void deleteSchema(int id);
     public void updateSchema(SchemaInfo schemaInfo);

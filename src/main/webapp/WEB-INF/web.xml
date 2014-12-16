@@ -7,7 +7,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath*:ApplicationContext.xml</param-value>
+        <param-value>classpath*:ApplicationContext.xml,classpath*:spring-quartz.xml</param-value>
     </context-param>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
